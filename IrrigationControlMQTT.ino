@@ -17,7 +17,6 @@ byte stationRelays[STATIONS] =  {
 
 const unsigned long status_frequency = 10000; // every 10 seconds
 unsigned long lastStatusSendTime;
-unsigned long currentTime;
 int connected = 0;
 
 static byte mac[] = { 0x5E, 0xED, 0x52, 0xFE, 0xED, 0x00 };
@@ -118,11 +117,6 @@ bool stationOn(int stationID) {
 
 bool stationOff(int stationID) {
   return !stationOn(stationID);
-}
-
-bool isStatusDue() {
-  currentTime = millis();
-  return (abs(currentTime - lastStatusSendTime) > status_frequency);
 }
 
 int buildTopic(int stationID, char *name){
