@@ -15,7 +15,7 @@ byte stationRelays[STATIONS] =  {
   9  /* RELAY 4 */
 };
 
-const unsigned long status_frequency = 10000; // every 60 seconds
+const unsigned long status_frequency = 10000; // every 10 seconds
 unsigned long lastStatusSendTime;
 unsigned long currentTime;
 int connected = 0;
